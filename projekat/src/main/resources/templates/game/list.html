@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Video Games</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1>Lista Video Igara</h1>
+<a href="/games/add">➕ Dodaj novu igru</a>
+<ul>
+    <li th:each="game : ${games}">
+        <b th:text="${game.title}"></b> — <i th:text="${game.genre}"></i> (<span th:text="${game.platform}"></span>)
+        <a th:href="@{|/games/${game.id}|}">Detalji</a>
+        <a th:href="@{|/games/edit/${game.id}|}">Izmeni</a>
+        <a th:href="@{|/games/delete/${game.id}|}">Obriši</a>
+    </li>
+</ul>
+</body>
+</html>

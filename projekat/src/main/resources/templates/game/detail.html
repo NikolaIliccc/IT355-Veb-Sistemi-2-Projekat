@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalji Igre</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1 th:text="${game.title}"></h1>
+<p><b>Žanr:</b> <span th:text="${game.genre}"></span></p>
+<p><b>Platforma:</b> <span th:text="${game.platform}"></span></p>
+<p><b>Opis:</b> <span th:text="${game.description}"></span></p>
+<a href="/games">⬅ Nazad</a>
+</body>
+</html>

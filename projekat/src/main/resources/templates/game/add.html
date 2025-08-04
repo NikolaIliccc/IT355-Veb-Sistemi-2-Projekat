@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj igru</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1>Dodaj novu igru</h1>
+<form action="#" th:action="@{/games/add}" th:object="${game}" method="post">
+    <label>Naziv: <input type="text" th:field="*{title}" /></label><br/>
+    <label>Žanr: <input type="text" th:field="*{genre}" /></label><br/>
+    <label>Platforma: <input type="text" th:field="*{platform}" /></label><br/>
+    <label>Opis: <textarea th:field="*{description}"></textarea></label><br/>
+    <button type="submit">Sačuvaj</button>
+</form>
+<a href="/games">Otkaži</a>
+</body>
+</html>

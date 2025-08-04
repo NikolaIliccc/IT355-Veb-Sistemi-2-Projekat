@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Izmeni igru</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1>Izmeni igru</h1>
+<form action="#" th:action="@{/games/edit}" th:object="${game}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Naziv: <input type="text" th:field="*{title}" /></label><br/>
+    <label>Zanr: <input type="text" th:field="*{genre}" /></label><br/>
+    <label>Platforma: <input type="text" th:field="*{platform}" /></label><br/>
+    <label>Opis: <textarea th:field="*{description}"></textarea></label><br/>
+    <button type="submit">Sacuvaj izmene</button>
+</form>
+<a href="/games">Otkazi</a>
+</body>
+</html>

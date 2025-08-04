@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3;
+    margin: 40px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+a {
+    margin-right: 10px;
+    color: #2980b9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
