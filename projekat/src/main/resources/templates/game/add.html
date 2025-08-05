@@ -8,11 +8,11 @@
 <h1>Dodaj novu igru</h1>
 <form action="#" th:action="@{/games/add}" th:object="${game}" method="post">
     <label>Naziv: <input type="text" th:field="*{title}" /></label><br/>
-    <label>Žanr: <input type="text" th:field="*{genre}" /></label><br/>
+    <label>Zanr: <input type="text" th:field="*{genre}" /></label><br/>
     <label>Platforma: <input type="text" th:field="*{platform}" /></label><br/>
     <label>Opis: <textarea th:field="*{description}"></textarea></label><br/>
-    <button type="submit">Sačuvaj</button>
+    <button type="submit">Sacuvaj</button>
 </form>
-<a href="/games">Otkaži</a>
+<a href="/games">Otkazi</a>
 </body>
 </html>

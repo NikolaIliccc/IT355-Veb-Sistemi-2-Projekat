@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Video Games</title>
+    <title>Video igre</title>
     <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
-<h1>Lista Video Igara</h1>
-<a href="/games/add">➕ Dodaj novu igru</a>
-<ul>
-    <li th:each="game : ${games}">
-        <b th:text="${game.title}"></b> — <i th:text="${game.genre}"></i> (<span th:text="${game.platform}"></span>)
-        <a th:href="@{|/games/${game.id}|}">Detalji</a>
-        <a th:href="@{|/games/edit/${game.id}|}">Izmeni</a>
-        <a th:href="@{|/games/delete/${game.id}|}">Obriši</a>
-    </li>
-</ul>
+
+<div class="section">
+    <h1>Lista video igara</h1>
+    <a href="/games/add">➕ Dodaj novu igru</a>
+</div>
+
+<div class="section" th:each="game : ${games}">
+    <h2 th:text="${game.title}"></h2>
+    <p><b>Zanr:</b> <span th:text="${game.genre}"></span></p>
+    <p><b>Platforma:</b> <span th:text="${game.platform}"></span></p>
+    <a th:href="@{|/games/${game.id}|}">Detalji</a>
+    <a th:href="@{|/games/edit/${game.id}|}">Izmeni</a>
+    <a th:href="@{|/games/delete/${game.id}|}">Obrisi</a>
+</div>
+
 </body>
 </html>

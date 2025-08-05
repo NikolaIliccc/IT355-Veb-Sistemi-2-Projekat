@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Detalji Igre</title>
+    <title th:text="${game.title}">Detalji igre</title>
     <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
-<h1 th:text="${game.title}"></h1>
-<p><b>Žanr:</b> <span th:text="${game.genre}"></span></p>
-<p><b>Platforma:</b> <span th:text="${game.platform}"></span></p>
-<p><b>Opis:</b> <span th:text="${game.description}"></span></p>
-<a href="/games">⬅ Nazad</a>
+
+<div class="section">
+    <h1 th:text="${game.title}">Naslov</h1>
+    <p><b>Zanr:</b> <span th:text="${game.genre}"></span></p>
+    <p><b>Platforma:</b> <span th:text="${game.platform}"></span></p>
+    <p><b>Opis:</b> <span th:text="${game.description}"></span></p>
+</div>
+
+<div class="section">
+    <h2>Komentari</h2>
+    <ul>
+        <li th:each="comment : ${comments}">
+            <b th:text="${comment.username}">Korisnik</b>: <span th:text="${comment.content}">Komentar</span>
+        </li>
+    </ul>
+
+    <form th:action="@{|/games/${game.id}/comment|}" method="post" th:object="${newComment}">
+        <label>Korisnicko ime:
+            <input type="text" th:field="*{username}" required/>
+        </label>
+        <label>Komentar:
+            <textarea th:field="*{content}" required></textarea>
+        </label>
+        <button type="submit">Posalji komentar</button>
+    </form>
+</div>
+
+<div class="section">
+    <h2>Ocene</h2>
+    <p>Prosecna ocena: <b th:text="${averageRating}">0</b> / 10</p>
+
+    <form th:action="@{|/games/${game.id}/rating|}" method="post" th:object="${newRating}">
+        <label>Korisnicko ime:
+            <input type="text" th:field="*{username}" required/>
+        </label>
+        <label>Ocena (1–10):
+            <input type="number" min="1" max="10" th:field="*{score}" required/>
+        </label>
+        <button type="submit">Oceni</button>
+    </form>
+</div>
+
+<a href="/games">⬅ Nazad na listu</a>
+
 </body>
 </html>

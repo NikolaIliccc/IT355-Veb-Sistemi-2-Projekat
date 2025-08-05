@@ -2,26 +2,65 @@ body {
     font-family: Arial, sans-serif;
     background-color: #eef2f3;
     margin: 40px;
+    color: #2c3e50;
 }
 
-h1 {
+h1, h2 {
     color: #2c3e50;
 }
 
 a {
     margin-right: 10px;
     color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 400px;
     gap: 10px;
+    margin-top: 10px;
 }
 
 input, textarea {
-    padding: 5px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
 }
